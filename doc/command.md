@@ -119,3 +119,21 @@ crea la carpeta del proyecto pero el nombre es myapp en la carpeta test
 python manage.py startapp mytest test
 
 ```
+# migraciones
+## creando migraciones pendientes
+
+```
+python manage.py makemigrations
+```
+
+```
+python manage.py makemigrations myapp
+```
+
+## aplicando migraciones
+```
+python manage.py migrate
+```
+
+
+
