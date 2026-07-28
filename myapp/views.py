@@ -13,3 +13,9 @@ def hello(request,username):
 
 def about(request):
     return HttpResponse("About")
+
+def projects(request):
+    return HttpResponse("<h1>Projects</h1>")
+
+def tasks(request):
+    return HttpResponse("<h1>Tasks</h1>")
