@@ -96,3 +96,19 @@ git add .
 ```
 git commit -m "primer commit"
 ```
+
+# corriendo servidor desarrollo
+
+```
+python manage.py runserver 
+```
+
+```
+python manage.py runserver 8080
+```
+
+# creamos una app en el proyecto
+
+```
+python manage.py startapp myapp
+```
