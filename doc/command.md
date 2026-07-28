@@ -109,6 +109,13 @@ python manage.py runserver 8080
 
 # creamos una app en el proyecto
 
+crea la carpeta de la app  y su nombre 
 ```
 python manage.py startapp myapp
+```
+
+crea la carpeta del proyecto pero el nombre es myapp en la carpeta test
+```
+python manage.py startapp mytest test
+
 ```
