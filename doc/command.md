@@ -135,5 +135,9 @@ python manage.py makemigrations myapp
 python manage.py migrate
 ```
 
+## ver secuencia sql
+```
+python manage.py sqlmigrate myapp 0001
+```
 
 
