@@ -14,7 +14,7 @@ def hello(request,username):
     return HttpResponse("<h2>Hello %s</h2>" % username)
 
 def about(request):
-    return HttpResponse("About")
+    return render(request, "about.html")
 
 def projects(request):
     #projects = list(Project.objects.values())
