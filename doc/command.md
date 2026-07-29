@@ -139,5 +139,7 @@ python manage.py migrate
 ```
 python manage.py sqlmigrate myapp 0001
 ```
-
-
+## crear un super usuario
+```
+python manage.py createsuperuser
+```

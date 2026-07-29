@@ -4,10 +4,22 @@
 {% for task in tasks%}
 
 <div>
-    <h1>{{task.title}}</h1>
+    <h1>
+        <!-- filtros jinja -->
+        {{ task.done|yesno:"✅,🕐" }}
+
+        {{task.title}}
+    </h1>
+    <!-- condicionales -->
+    {% if task.done == False %}
+    <p>❌ Tarea pendiente</p>
+    {% else %}
+    <p>✅ Tarea realizada</p>
+    {% endif%}
     <p>{{task.description}}</p>
     <p>project: {{task.project.name}}</p>
     <button>Delete</button>
+    <button>✅ Done</button>
 </div>
 <br>
 
