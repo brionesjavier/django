@@ -122,3 +122,14 @@ def tasks(request, id):
 
     return JsonResponse(data)
 ```
+
+## from django.shortcuts import render
+```python
+from django.shortcuts import render
+
+
+def index(request):
+    title= "Django Course!!"
+    #para ocupar render se necesitar ocupar los templates
+    return render(request, "index.html",{"title":title})
+```

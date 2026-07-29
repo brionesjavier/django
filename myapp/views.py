@@ -5,7 +5,8 @@ from myapp.models import Project,Task
 # Create your views here.
 
 def index(request):
-    return HttpResponse("Index page")
+    title= "Django Course!!"
+    return render(request, "index.html",{"title":title})
 
 def hello(request,username):
     print(f"saludos {username}")
@@ -17,9 +18,9 @@ def about(request):
 
 def projects(request):
     projects = list(Project.objects.values())
-    return JsonResponse(projects, safe=False)
+    return render(request, "projects.html",{"projects":projects})
 
-def tasks(request, id):
-    tasks = get_object_or_404(Task,id=id)
+def tasks(request):
+    tasks = Task.objects.all()
 
-    return HttpResponse(f"task: {tasks.title}")
+    return render(request, "tasks.html",{"tasks":tasks})
