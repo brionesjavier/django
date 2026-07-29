@@ -17,7 +17,8 @@ def about(request):
     return HttpResponse("About")
 
 def projects(request):
-    projects = list(Project.objects.values())
+    #projects = list(Project.objects.values())
+    projects = Project.objects.all()
     return render(request, "projects.html",{"projects":projects})
 
 def tasks(request):
