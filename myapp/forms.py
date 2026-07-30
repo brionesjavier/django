@@ -7,3 +7,7 @@ class CreateNewTask(forms.Form):
     description = forms.CharField(
         label="Descripcion de tarea", widget=forms.Textarea, required=False
     )
+
+
+class CreateNewProject(forms.Form):
+    name = forms.CharField(label="Nombre del proyecto", max_length=200)

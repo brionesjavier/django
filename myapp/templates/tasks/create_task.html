@@ -4,7 +4,7 @@
 <h1>create a new Tasks</h1>
 
 
-<form action="" method="POST">
+<form action="{%url 'create_task' %}" method="POST">
     {% csrf_token %}
     {{form.as_p}}
     <button>Save</button>

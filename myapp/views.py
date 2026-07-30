@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from myapp.models import Project, Task
 
-from .forms import CreateNewTask
+from .forms import CreateNewTask, CreateNewProject
 
 # Create your views here.
 
@@ -25,7 +25,26 @@ def about(request):
 def projects(request):
     # projects = list(Project.objects.values())
     projects = Project.objects.all()
-    return render(request, "projects.html", {"projects": projects})
+    return render(request, "projects/projects.html", {"projects": projects})
+
+
+def create_project(request):
+
+    if request.method == "GET":
+
+        return render(
+            request, "projects/create_project.html",
+            {"form": CreateNewProject()}
+        )
+
+    elif request.method == "POST":
+        print(request.POST["name"])
+
+        Project.objects.create(name=request.POST['name'])
+        return redirect("projects")
+    else:
+
+        print("metodo no permitido")
 
 
 def tasks(request):
@@ -38,9 +57,8 @@ def create_task(request):
 
     if request.method == "GET":
 
-        return render(request,
-                      "tasks/create_task.html",
-                      {"form": CreateNewTask})
+        return render(request, "tasks/create_task.html",
+                      {"form": CreateNewTask()})
 
     elif request.method == "POST":
         print(request.POST["title"])
