@@ -47,6 +47,14 @@ def create_project(request):
         print("metodo no permitido")
 
 
+def project_details(request, id):
+    print(id)
+    project = Project.objects.get(id=id)
+
+    return render(request, "projects/details.html",
+           {"project": project})
+
+
 def tasks(request):
     tasks = Task.objects.all()
 

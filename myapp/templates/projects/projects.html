@@ -5,9 +5,9 @@
 <h1>Projects</h1>
 
 {%  for project in projects%}
-<article>
+<article class="card">
    
-    <h1> {{project}}</h1>
+    <a href="{% url 'project_details' project.id %}"> {{project}}</a>
     <button>Delete</button>
     <button>Update</button>
 </article>
